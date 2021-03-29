@@ -21,36 +21,36 @@ steps:
       from_secret: DOCKERHUB_PASSWORD
     build_args:
       - CPU=amd64
-- name: build-arm64-image
-  image: plugins/docker
-  settings:
-    repo: walkero/browservice
-    tags:
-      - "latest-arm64"
-    cache_from:
-      - walkero/browservice:latest-arm64
-    dockerfile: Dockerfile
-    username:
-      from_secret: DOCKERHUB_USERNAME
-    password:
-      from_secret: DOCKERHUB_PASSWORD
-    build_args:
-      - CPU=arm64
-- name: build-arm-image
-  image: plugins/docker
-  settings:
-    repo: walkero/browservice
-    tags:
-      - "latest-arm"
-    cache_from:
-      - walkero/browservice:latest-arm
-    dockerfile: Dockerfile
-    username:
-      from_secret: DOCKERHUB_USERNAME
-    password:
-      from_secret: DOCKERHUB_PASSWORD
-    build_args:
-      - CPU=arm
+# - name: build-arm64-image
+#   image: plugins/docker
+#   settings:
+#     repo: walkero/browservice
+#     tags:
+#       - "latest-arm64"
+#     cache_from:
+#       - walkero/browservice:latest-arm64
+#     dockerfile: Dockerfile
+#     username:
+#       from_secret: DOCKERHUB_USERNAME
+#     password:
+#       from_secret: DOCKERHUB_PASSWORD
+#     build_args:
+#       - CPU=arm64
+# - name: build-arm-image
+#   image: plugins/docker
+#   settings:
+#     repo: walkero/browservice
+#     tags:
+#       - "latest-arm"
+#     cache_from:
+#       - walkero/browservice:latest-arm
+#     dockerfile: Dockerfile
+#     username:
+#       from_secret: DOCKERHUB_USERNAME
+#     password:
+#       from_secret: DOCKERHUB_PASSWORD
+#     build_args:
+#       - CPU=arm
 
 
 trigger:
